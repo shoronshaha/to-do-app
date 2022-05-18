@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../Firebase/firebase.init';
 
@@ -68,10 +69,16 @@ const AddTask = () => {
 
 
                     <div className="text-right">
-                        <button type='submit' className="py-3 px-8 bg-orange-600 text-white font-bold">Add</button>
+                        <button type='submit' className="py-3 px-8 bg-orange-600 text-white font-bold uppercase">Add-Task</button>
                     </div>
                 </form>
             </div>
+            <Link
+                to='/allTask'
+                className='w-full my-5 py-2 px-3 text-white font-bold mt-3 bg-purple-500 sm:w-auto sm:mb-0 items-center'
+            >
+                ALL-TASK
+            </Link>
         </div>
     );
 };
