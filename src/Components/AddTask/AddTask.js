@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../Firebase/firebase.init';
 
 const AddTask = () => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     if (user) {
         console.log(user);
@@ -27,13 +28,27 @@ const AddTask = () => {
                     event.target.reset();
                 }
             })
+        navigate('/allTask')
     }
+
+    // const handelStrikeThrough = async (event) => {
+    //     event.preventDefault();
+    //     const proceed = window.confirm('Are you sure?');
+    //     if (proceed) {
+
+    //     }
+    //     const addTask = {
+    //         taskName: event.target.taskName.value,
+    //         description: event.target.description.value,
+    //     };
+
+    // }
 
 
     return (
         <div className="mt-20 w-full">
             <h1 className='text-[3vw] text-center font-bold'>ADD YOUR TASK</h1>
-            <div className="bg-[#a4c3b2] p-10 md:w-3/4 lg:w-1/2 mx-auto">
+            <div className="bg-[#a4c3b2] p-10 md:w-3/4 lg:w-1/2 mx-auto mb-10">
                 <form onSubmit={handleSubmit}>
                     <div className="flex items-center mb-5">
                         <label className="inline-block w-40 mr-6 text-right  text-black">
@@ -68,17 +83,14 @@ const AddTask = () => {
 
 
 
-                    <div className="text-right">
-                        <button type='submit' className="py-3 px-8 bg-orange-600 text-white font-bold uppercase">Add-Task</button>
+                    <div className="text-right grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <button type='submit' className="py-3 px-8 bg-orange-600 text-white font-bold uppercase">Add - Task</button>
+                        <button type='button' className="py-3 px-8 bg-blue-600 text-white font-bold uppercase">complete</button>
                     </div>
+
                 </form>
             </div>
-            <Link
-                to='/allTask'
-                className='w-full my-5 py-2 px-3 text-white font-bold mt-3 bg-purple-500 sm:w-auto sm:mb-0 items-center'
-            >
-                ALL-TASK
-            </Link>
+
         </div>
     );
 };

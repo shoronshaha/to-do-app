@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 import AddTask from './Components/AddTask/AddTask';
 import AllTask from './Components/AllTask/AllTask';
@@ -16,6 +17,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register />}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
