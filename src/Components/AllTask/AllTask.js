@@ -6,7 +6,7 @@ const AllTask = () => {
     const [allTasks, setAllTasks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/addTask')
+        fetch('https://sheltered-escarpment-49962.herokuapp.com/addTask')
             .then(res => res.json())
             .then(data => setAllTasks(data))
     }, []);
@@ -15,7 +15,7 @@ const AllTask = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/addTask/${id}`;
+            const url = `https://sheltered-escarpment-49962.herokuapp.com/addTask/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

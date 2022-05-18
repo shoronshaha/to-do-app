@@ -67,7 +67,7 @@ const Login = () => {
     return (
         <div>
 
-            <form onSubmit={handleSubmit} className="justify-center items-center w-full shadow rounded-lg bg-white px-6 flex flex-col md:w-1/2 lg:w-1/3 m-auto my-20">
+            <form onSubmit={handleSubmit} className="justify-center items-center w-full shadow rounded-lg bg-white px-6 flex flex-col md:w-1/2 lg:w-1/3 m-auto my-20 py-10">
                 <h2 className="text-3xl my-4 font-bold ">LOGIN</h2>
                 <div className="w-full p-2 justify-start flex flex-col">
                     <div className=" flex flex-row">

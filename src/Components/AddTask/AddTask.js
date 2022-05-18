@@ -20,7 +20,7 @@ const AddTask = () => {
             description: event.target.description.value,
         };
         console.log(addTask);
-        await axios.post('http://localhost:5000/addTask', addTask)
+        await axios.post('https://sheltered-escarpment-49962.herokuapp.com/addTask', addTask)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

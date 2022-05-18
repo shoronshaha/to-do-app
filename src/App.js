@@ -12,10 +12,10 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <Routes>
-        <Route path='/addTask' element={<AddTask></AddTask>}></Route>
-        <Route path='/allTask' element={<AllTask></AllTask>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register />}></Route>
+        <Route path='/addTask' element={<AddTask></AddTask>}></Route>
+        <Route path='/allTask' element={<AllTask></AllTask>}></Route>
       </Routes>
       <ToastContainer />
     </div>
