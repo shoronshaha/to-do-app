@@ -72,7 +72,7 @@ const AllTask = () => {
 
             <div className='text-center my-10'>
                 <Link
-                    to='/addTask'
+                    to='/'
                     className='w-full my-5 py-2 px-3 text-white font-bold mt-3 bg-purple-500 sm:w-auto sm:mb-0 items-center'
                 >
                     ADD - TASK
