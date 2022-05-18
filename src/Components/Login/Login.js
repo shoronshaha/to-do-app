@@ -7,6 +7,7 @@ import mail from '../../icons/mail.png'
 import password from '../../icons/password.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../Shared/Loading/Loading';
 
 
 
@@ -16,7 +17,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/addTask";
 
     let errorElement;
     const [
@@ -36,7 +37,9 @@ const Login = () => {
         errorElement = <p className='text-red-600'>Error: {error?.message}</p>
 
     }
-
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     const handleSubmit = async event => {
         event.preventDefault();

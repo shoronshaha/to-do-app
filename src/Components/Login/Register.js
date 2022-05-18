@@ -7,6 +7,7 @@ import auth from '../../Firebase/firebase.init';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../Shared/Loading/Loading';
 
 
 
@@ -27,7 +28,9 @@ const Register = () => {
     const navigateLogin = () => {
         navigate('/login');
     }
-
+    if (loading) {
+        return <Loading></Loading>
+    }
 
 
     const handleRegister = async (event) => {
