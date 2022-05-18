@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import CustomLink from '../CustomLink/CustomLink';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
