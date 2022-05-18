@@ -39,7 +39,7 @@ const Register = () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
         toast('Updated profile');
-        navigate('/home');
+        navigate('/addTask');
     }
 
 

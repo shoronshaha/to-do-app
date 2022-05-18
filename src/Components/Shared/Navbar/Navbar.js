@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import CustomLink from '../CustomLink/CustomLink';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
-
+    const handleSignOut = () => {
+        signOut(auth);
+    }
 
     let [open, setOpen] = useState(false);
     return (
@@ -28,8 +31,8 @@ const Navbar = () => {
 
                     {
                         user && <>
-                            <li className='md:ml-8 text-[16px] md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500 font-bold '><CustomLink to='/addItems'>ADD TASK</CustomLink></li>
-                            <li className='md:ml-8 text-[16px] md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500 font-bold '><CustomLink to='/myItems'>ALL ITEMS</CustomLink></li>
+                            <li className='md:ml-8 text-[16px] md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500 font-bold '><CustomLink to='/addTask'>ADD TASK</CustomLink></li>
+                            <li className='md:ml-8 text-[16px] md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500 font-bold '><CustomLink to='/allTask'>ALL TASK</CustomLink></li>
 
                         </>
 
@@ -37,7 +40,7 @@ const Navbar = () => {
 
                     {
                         user ?
-                            <li className='md:ml-8 text-[16px] md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500 font-bold '><CustomLink to='/login'>LOGOUT</CustomLink></li>
+                            <li onClick={handleSignOut} className='md:ml-8 text-[16px] md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500 font-bold '><CustomLink to='/login'>LOGOUT</CustomLink></li>
                             :
                             <li className='md:ml-8 text-[16px] md:my-0 my-7 text-gray-800 hover:text-gray-400 duration-500 font-bold '><CustomLink to='/login'>LOGIN</CustomLink></li>
                     }
