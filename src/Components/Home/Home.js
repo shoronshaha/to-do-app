@@ -30,18 +30,12 @@ const Home = () => {
         navigate('/allTask')
     }
 
-    // const handelStrikeThrough = async (event) => {
-    //     event.preventDefault();
-    //     const proceed = window.confirm('Are you sure?');
-    //     if (proceed) {
-
-    //     }
-    //     const addTask = {
-    //         taskName: event.target.taskName.value,
-    //         description: event.target.description.value,
-    //     };
-
-    // }
+    const handelStrikeThrough = async (event) => {
+        event.preventDefault();
+        const proceed = window.confirm("your task complete");
+        if (proceed) {
+        }
+    }
 
 
     return (
@@ -64,8 +58,6 @@ const Home = () => {
 
                     </div>
 
-
-
                     <div className="flex items-center mb-5">
                         <label className="inline-block w-40 mr-6 text-right  text-black">
                             Description
@@ -84,7 +76,7 @@ const Home = () => {
 
                     <div className="text-right grid grid-cols-1 lg:grid-cols-2 gap-4">
                         <button type='submit' className="py-3 px-8 bg-orange-600 text-white font-bold uppercase">Add - Task</button>
-                        <button type='button' className="py-3 px-8 bg-blue-600 text-white font-bold uppercase">complete</button>
+                        <button onClick={handelStrikeThrough} type='button' className="py-3 px-8 bg-blue-600 text-white font-bold uppercase">complete</button>
                     </div>
 
                 </form>

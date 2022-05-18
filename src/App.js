@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
-import AddTask from './Components/AddTask/AddTask';
 import AllTask from './Components/AllTask/AllTask';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
