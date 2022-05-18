@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../Firebase/firebase.init';
 
 const AddTask = () => {
@@ -16,8 +18,17 @@ const AddTask = () => {
             description: event.target.description.value,
         };
         console.log(addTask);
-
+        await axios.post('http://localhost:5000/addTask', addTask)
+            .then(response => {
+                const { data } = response;
+                if (data.insertedId) {
+                    toast('your item is added !!');
+                    event.target.reset();
+                }
+            })
     }
+
+
     return (
         <div className="mt-20 w-full">
             <h1 className='text-[3vw] text-center font-bold'>ADD YOUR TASK</h1>
