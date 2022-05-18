@@ -14,7 +14,7 @@ const AddTask = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const addTask = {
-            TaskName: event.target.taskName.value,
+            taskName: event.target.taskName.value,
             description: event.target.description.value,
         };
         console.log(addTask);
