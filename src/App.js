@@ -21,7 +21,6 @@ function App() {
         }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register />}></Route>
-        <Route path='/addTask' element={<AddTask></AddTask>}></Route>
         <Route path='/allTask' element={<AllTask></AllTask>}></Route>
       </Routes>
       <ToastContainer />
